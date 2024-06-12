@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="to-hide">
+        <h1 id="enter-title">Hey there cutie bugji, why don't you click on the button below?</h1>
+        <button id="btn" role="button">Meow</button>
+    </div>
+
+    <div id="display-this" class="hidden">
+        <h2 class="text">Happy Birthday Wajih!</h2>
+        <h3 class="text">I made this lil suprise website for you because i cherish you a lot!<br/>
+        The same date as today but 26 years ago a precious little cutie baby boi was born.<br/>
+        Words Can't describe how much we all love you! <br/> 
+        Today is your day, enjoy it to the fullest! 
+        Wish you the besssst in your life and afterlife ❤️ </h3>
+        <button id="btn-confetti" role="button">Yay!</button>
+        <img src="./giphy.gif" width="300px">
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        let toHide = document.querySelector("#to-hide");
+        let toDisplay = document.querySelector("#display-this");
+        let beginBtn = document.querySelector("#btn");
+        let body = document.querySelector("body");
+        const music = new Audio();
+        music.src = "./music.mp3"
+        const clicky = new Audio();
+        clicky.src = "./sparkle.mp3"
+
+        document.querySelector("#btn").addEventListener('click', ()=>{
+            confetti();
+            music.play();
+            clicky.play();
+            toHide.classList = "hidden";
+            toDisplay.classList = "to-display";
+            body.style.backgroundImage = 'url("./this.jpg")';
+        })
+
+        document.querySelector("#btn-confetti").addEventListener('click', ()=>{
+            confetti();
+            clicky.play();
+        })
+    </script>
+</body>
+</html>
